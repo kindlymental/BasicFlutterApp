@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/const/const.dart';
 import 'package:hello_world/pages/home.dart';
 import 'package:hello_world/pages/me.dart';
 
@@ -12,7 +13,7 @@ class _TabNavigatorState extends State<TabNavigator> {
   int _currentIndex = 0;
 
   final _defaultColor = Colors.grey;
-  final _selectedColor = Colors.red;
+  final _selectedColor = Const.AppBarBgColor;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +24,9 @@ class _TabNavigatorState extends State<TabNavigator> {
       ),
       bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
+          type: BottomNavigationBarType.fixed,
+          unselectedFontSize: 11,
+          selectedFontSize: 12,
           onTap: (index) {
             _controller.jumpToPage(index);
             setState(() {
